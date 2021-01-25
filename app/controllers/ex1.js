@@ -22,8 +22,22 @@ export default class Ex1Controller extends Controller {
     else return 'info';
   }
 
+  get size(){
+    return this.toggle();
+  }
+
   @action
   clear(){
-    this.toggle()cscv
+    return '';
+  }
+
+  @action
+  save(){
+    ???
+  }
+
+  @action
+  update(){
+    ???
   }
 }
