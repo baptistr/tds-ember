@@ -1,2 +1,23 @@
 {{page-title "Ex1"}}
+<div class="container rounded border border-primary">
+  <nav class="navbar navbar-dark bg-primary container-fluid">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Ex 1 : Note Application</a>
+    </div>
+  </nav>
+  <div class="my-4">
+    Note :
+    <div class="col-12 border border-primary">
+      <Textarea class="form-control" @value={{this.content}}/>
+    </div>
+  </div>
+  <button type="button" class="btn btn-primary">Enregistrer</button>
+  <button type="button" class="btn btn-primary">Effacer</button>
+  <div class="alert alert-info my-4" role="alert">
+    Nombre de caractères restant : {{this.size}}
+  </div>
+  <div class="alert alert-info" role="alert">
+    Note modifiée : {{this.style}}
+  </div>
+</div>
 {{outlet}}
