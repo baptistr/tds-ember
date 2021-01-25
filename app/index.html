@@ -6,6 +6,8 @@
     <title>Tds</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
     {{content-for "head"}}
 
@@ -16,6 +18,28 @@
   </head>
   <body>
     {{content-for "body"}}
+    <div class="container rounded border border-primary">
+      <nav class="navbar navbar-dark bg-primary container-fluid">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Ex 1 : Note Application</a>
+        </div>
+      </nav>
+      <div class="my-4">
+        Note :
+        <div class="col-12 border border-primary">
+          <textarea class="form-control" rows="4"></textarea>
+        </div>
+      </div>
+      <button type="button" class="btn btn-primary">Enregistrer</button>
+      <button type="button" class="btn btn-primary">Effacer</button>
+      <div class="alert alert-info my-4" role="alert">
+        Nombre de caractères restant :
+      </div>
+      <div class="alert alert-info" role="alert">
+        Note modifiée
+      </div>
+    </div>
+
 
     <script src="{{rootURL}}assets/vendor.js"></script>
     <script src="{{rootURL}}assets/tds.js"></script>

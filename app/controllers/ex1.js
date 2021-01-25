@@ -33,11 +33,11 @@ export default class Ex1Controller extends Controller {
 
   @action
   save(){
-    ???
+
   }
 
   @action
   update(){
-    ???
+
   }
 }
