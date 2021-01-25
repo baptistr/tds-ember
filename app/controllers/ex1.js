@@ -9,8 +9,8 @@ export default class Ex1Controller extends Controller {
   @tracked info = '';
 
   get style() {
-    if (size() < 20) return 'warning';
-    else if (size() < 10) return 'danger';
+    if (this.size < 10) return 'danger';
+    else if (this.size < 20) return 'warning';
     else return 'info';
   }
 
