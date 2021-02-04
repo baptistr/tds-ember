@@ -1,0 +1,19 @@
+{{page-title "Ex2"}}
+
+<h1>Services</h1>
+
+<p>Choisissez les élements à inclure :<br><b>{{@model.countActive}} services sélectionnés</b></p>
+<b></b>
+
+<ul class="list-group">
+  {{#each @model.services as |service|}}
+    <li class="list-group-item {{if service.active 'active' ''}}"
+      {{action "toggleActive" service}}>{{service.name}} {{service.price}}</li>
+
+  {{/each}}
+</ul>
+<hr>
+<p>Total : {{@model.sumActive}}</p>
+
+
+{{outlet}}
