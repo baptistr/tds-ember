@@ -1,10 +1,14 @@
 import Route from '@ember/routing/route';
-import {action, set} from '@ember/object';
+import { promos } from 'tds/data/datas';
+import Check from 'tds/classes/Services';
+import {action} from '@ember/object';
 
 export default class PromoRoute extends Route {
-
-  @action valider() {
-    set('active', !s.active);
+  model() {
+    return new Check(promos);
   }
 
+  @action code() {
+    return null;
+  }
 }

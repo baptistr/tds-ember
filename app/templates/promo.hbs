@@ -1,2 +1,10 @@
 {{page-title "Promo"}}
+
+<input type="checkbox">
+<Input
+        @id="code"
+        @type="text"
+        @value=""
+        @key-press={{action "code" @model.Check}}
+/>
 {{outlet}}
