@@ -1,0 +1,14 @@
+{{page-title "Step1"}}
+<MultiSelect @elements={{this.dispoItems}}
+             @selected={{this.dispoItems}}
+             @onChange={{this.changeDispo}}
+/>
+<button {{action "add" this.dispoItems this.includedItems this.dispoItems}}>Ajouter</button>
+<button {{action "add" this.includedItems this.dispoItems this.includedItems}}>Retirer</button>
+
+<ul>
+  {{#each this.dispoItems_ as |item|}}
+    <li>{{item.title}}</li>
+  {{/each}}
+</ul>
+{{outlet}}
