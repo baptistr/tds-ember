@@ -12,4 +12,7 @@ export default class ContactsRoute extends Route {
   @action cancelDeletion(contacts) {
     contacts.forEach((c) => c.rollbackAttributes());
   }
+  @action saveDeletion(contacts) {
+    contacts.forEach((c) => c.save());
+  }
 }
