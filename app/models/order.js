@@ -1,8 +1,9 @@
-import Model, { attr } from '@ember-data/model';
+import Model, { attr, hasMany } from '@ember-data/model';
 
 export default class OrderModel extends Model {
-  @attr('number') id;
-  @attr('string') name;
-  @attr('string') email;
-  @attr('string') password;
+  @attr('date') dateCreation;
+  @hasMany('orderdetail') orderdetail;
+  get count() {
+    return this.orderdetail.length;
+  }
 }

@@ -10,4 +10,5 @@ Router.map(function () {
   this.route('board');
   this.route('logout');
   this.route('Abstractroute');
+  this.route('order', {path:'order/:order_id'});
 });
