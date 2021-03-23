@@ -11,4 +11,10 @@ Router.map(function () {
   this.route('logout');
   this.route('Abstractroute');
   this.route('order', {path:'order/:order_id'});
+  this.route('sections', function() {
+    this.route('add');
+    this.route('addProduct');
+    this.route('delete', {path:'delete/:section_id'});
+    this.route('edit', {path:'edit/:section_id'});
+  });
 });

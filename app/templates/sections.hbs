@@ -1,0 +1,27 @@
+{{page-title "Sections"}}
+<h1>Store</h1>
+<button {{action "board"}}>Retour au table de bord</button>
+<fieldset>
+  <legend>Gestion des sections</legend>
+  <button {{action "newSection"}}>Nouvelle section ...</button>
+  <button {{action "newProduct"}}>Nouveau produit ...</button>
+
+  <label for="filterSections">Sections (nb sections)</label>
+  <Input
+          @id="filterSections"
+          @type="text"
+          @value="Filtrer la section">
+  </Input>
+
+  <ul>
+    {{#each @model as |section|}}
+      <li>
+        {{section.name}}
+        {{section.description}}
+        <button>nb produit</button>
+        <button>Editer ...</button>
+      </li>
+    {{/each}}
+  </ul>
+</fieldset>
+{{outlet}}
