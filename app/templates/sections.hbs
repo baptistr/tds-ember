@@ -2,26 +2,32 @@
 <h1>Store</h1>
 <button {{action "board"}}>Retour au table de bord</button>
 <fieldset>
-  <legend>Gestion des sections</legend>
-  <button {{action "newSection"}}>Nouvelle section ...</button>
-  <button {{action "newProduct"}}>Nouveau produit ...</button>
+    <legend>Gestion des sections</legend>
+    <div class="ui container">
+    <button {{action "newSection"}}>Nouvelle section ...</button>
+    <button {{action "newProduct"}}>Nouveau produit ...</button>
 
-  <label for="filterSections">Sections (nb sections)</label>
-  <Input
-          @id="filterSections"
-          @type="text"
-          @value="Filtrer la section">
-  </Input>
+    <label for="filterSections">Sections (nb sections)</label>
+    <Input
+            @id="filterSections"
+            @type="text"
+            @value="Filtrer la section">
+    </Input>
 
-  <ul>
-    {{#each @model as |section|}}
-      <li>
-        {{section.name}}
-        {{section.description}}
-        <button>nb produit</button>
-        <button>Editer ...</button>
-      </li>
-    {{/each}}
-  </ul>
+    <div class="ui table">
+      <div class="ui relaxed divided list">
+      {{#each @model as |section|}}
+        <div class="item">
+          <div class="content">
+            <div class="header"> <strong>{{section.name}}</strong></div>
+            {{section.description}}
+          </div>
+          <LinkTo @route="sections.edit" @model={{section.id}} class="ui tiny orange button"><i class="edit icon"></i></LinkTo>
+          <button class="ui tiny inverted red button"><i class="trash icon"></i></button>
+          {{outlet}}
+        </div>
+      {{/each}}
+      </div>
+    </div>
+  </div>
 </fieldset>
-{{outlet}}

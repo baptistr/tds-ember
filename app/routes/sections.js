@@ -1,7 +1,7 @@
-import Route from '@ember/routing/route';
 import { action } from '@ember/object';
+import Abstractroute from './abstractroute';
 
-export default class SectionsRoute extends Route {
+export default class SectionsRoute extends Abstractroute {
   model() {
     return this.store.findAll('sections');
   }

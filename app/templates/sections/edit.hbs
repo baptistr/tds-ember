@@ -1,2 +1,19 @@
 {{page-title "Edit"}}
+<fieldset>
+  <legend>Modifier une section</legend>
+  <div class="ui container">
+    <div class="ui form">
+      <div class="field">
+        <label>Nom :</label>
+        <Input type="text" @value={{@model.name}} placeholder="Nom de la section" required/>
+      </div>
+      <div class="field">
+        <label>Description :</label>
+        <Input type="text" @value={{@model.description}} placeholder="Doit décrire la section" required/>
+      </div>
+      <button {{ action 'editSection' @model }} type="submit" class="ui green button">Confirmer</button>
+      <LinkTo @route="sections" class="ui button">Annuler</LinkTo>
+    </div>
+  </div>
+</fieldset>
 {{outlet}}

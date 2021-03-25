@@ -1,0 +1,13 @@
+.item{
+  padding: 10px!important;
+}
+.ui.button:not(.icon) > .icon:not(.button):not(.dropdown) {
+  margin: 0!important;
+  padding: 0!important;
+}
+.button{
+  margin: 10px!important;
+}
+h1{
+  text-align: center;
+}
