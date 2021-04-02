@@ -1,2 +1,11 @@
 {{page-title "Delete"}}
+<fieldset>
+  <legend>Supprimer une section</legend>
+  <div class="ui container">
+    <div class="ui form">
+      <button {{ action 'deleteSection' @model }} type="submit" class="ui red button">Confirmer</button>
+      <LinkTo @route="sections" class="ui button">Annuler</LinkTo>
+    </div>
+  </div>
+</fieldset>
 {{outlet}}

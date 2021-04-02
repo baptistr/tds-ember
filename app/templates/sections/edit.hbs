@@ -11,7 +11,7 @@
         <label>Description :</label>
         <Input type="text" @value={{@model.description}} placeholder="Doit décrire la section" required/>
       </div>
-      <button {{ action 'editSection' @model }} type="submit" class="ui green button">Confirmer</button>
+      <button {{ action 'editSection' @model }} type="submit" class="ui orange button">Confirmer</button>
       <LinkTo @route="sections" class="ui button">Annuler</LinkTo>
     </div>
   </div>
