@@ -15,6 +15,11 @@ Router.map(function () {
     this.route('add');
     this.route('addProduct');
     this.route('delete', {path:'delete/:section_id'});
-    this.route('edit', {path:'edit/:section_id'});
+    this.route('edit', {path:'edit/:section_id'}, function() {
+      this.route('edit', {path:'edit/:product_id'});
+      this.route('addProduct');
+      this.route('delete');
+    });
   });
+  this.route('test');
 });

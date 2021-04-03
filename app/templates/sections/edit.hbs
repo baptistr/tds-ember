@@ -5,15 +5,24 @@
     <div class="ui form">
       <div class="field">
         <label>Nom :</label>
-        <Input type="text" @value={{@model.name}} placeholder="Nom de la section" required/>
+        <Input type="text" @value={{@model.section.name}} placeholder="Nom de la section" required/>
       </div>
       <div class="field">
         <label>Description :</label>
-        <Input type="text" @value={{@model.description}} placeholder="Doit décrire la section" required/>
+        <Input type="text" @value={{@model.section.description}} placeholder="Doit décrire la section" required/>
       </div>
-      <button {{ action 'editSection' @model }} type="submit" class="ui orange button">Confirmer</button>
+      <button {{ action 'editSection' @model.section }} type="submit" class="ui orange button">Confirmer</button>
       <LinkTo @route="sections" class="ui button">Annuler</LinkTo>
     </div>
+    <hr>
+    <ul>
+    {{#each @model.section.products as |product|}}
+      <li class="productInSection"><img src="/assets/ressources/{{product.image}}.jpg" width="150" height="100"/> <strong>{{product.name}}</strong> — {{product.price}}€ — {{product.comments}}</li>
+      <LinkTo {{action "resetEdit" product.id}} @route="sections.edit.edit" @models={{array @model.section.id product.id}} class="ui mini yellow button"><i class="edit icon"></i></LinkTo>
+      <!--<LinkTo @route="sections.delete" @model={{section.id}} class="ui tiny inverted red button"><i class="trash icon"></i></LinkTo>-->
+      {{outlet product.id}}
+    {{/each}}
+    </ul>
   </div>
 </fieldset>
 {{outlet}}

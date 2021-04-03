@@ -16,15 +16,15 @@
 
       <div class="ui table">
         <div class="ui relaxed divided list">
-        {{#each @model.sections as |sections|}}
+        {{#each @model as |section|}}
           <div class="item">
             <div class="content">
-              <div class="header"> <strong>{{sections.name}}</strong></div>
-              {{sections.description}}
+              <div class="header"> <strong>{{section.name}} <span class="ui circular label">{{section.products.length}}</span></strong></div>
+              {{section.description}}
             </div>
-            <LinkTo @route="sections.edit" @model={{sections.id}} class="ui tiny orange button"><i class="edit icon"></i></LinkTo>
-            <LinkTo @route="sections.delete" @model={{sections.id}} class="ui tiny inverted red button"><i class="trash icon"></i></LinkTo>
-            {{outlet sections.id}}
+            <LinkTo {{action "resetEdit" section.id}} @route="sections.edit" @model={{section.id}} class="ui tiny orange button"><i class="edit icon"></i></LinkTo>
+            <LinkTo {{action "resetDelete" section.id}} @route="sections.delete" @model={{section.id}} class="ui tiny inverted red button"><i class="trash icon"></i></LinkTo>
+            {{outlet section.id}}
           </div>
         {{/each}}
         </div>

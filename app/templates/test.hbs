@@ -1,0 +1,5 @@
+{{page-title "Test"}}
+{{outlet}}
+{{#each @model as |section|}}
+  {{section.name}} / {{section.products.length}}
+{{/each}}

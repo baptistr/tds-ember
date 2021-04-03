@@ -1,17 +1,17 @@
 import Abstractroute from './abstractroute';
-import RSVP from 'rsvp';
 import { action } from '@ember/object';
 
 export default class SectionsRoute extends Abstractroute {
   model() {
-    return RSVP.hash({
-      sections: this.store.findAll('sections'),
-      products: this.store.findAll('product'),
-    });
+    return this.store.findAll('section', { include: 'products' });
   }
 
   @action addSection() {
     this.transitionTo('sections.add');
+  }
+
+  @action editSection() {
+    this.transitionTo('sections.edit');
   }
 
   @action deleteSection() {
@@ -24,5 +24,17 @@ export default class SectionsRoute extends Abstractroute {
 
   @action addProduct() {
     this.transitionTo('sections.addProduct');
+  }
+
+  @action resetEdit(idSection) {
+    this.transitionTo('sections').then(() => {
+      this.transitionTo('sections.edit', idSection);
+    });
+  }
+
+  @action resetDelete(idSection) {
+    this.transitionTo('sections').then(() => {
+      this.transitionTo('sections.delete', idSection);
+    });
   }
 }
