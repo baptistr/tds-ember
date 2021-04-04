@@ -15,14 +15,15 @@
       <LinkTo @route="sections" class="ui button">Annuler</LinkTo>
     </div>
     <hr>
+    <LinkTo @route="sections.edit.addProduct" @model="{{@model.sectionId}}" class="ui black button"><i class="plus icon"></i> Ajouter un nouveau produit dans cette section</LinkTo>
+    {{outlet}}
     <ul>
     {{#each @model.section.products as |product|}}
-      <li class="productInSection"><img src="/assets/ressources/{{product.image}}.jpg" width="150" height="100"/> <strong>{{product.name}}</strong> — {{product.price}}€ — {{product.comments}}</li>
+      <li class="productInSection"><img src="/assets/img/{{product.image}}.jpg" width="150" height="100"/> <strong>{{product.name}}</strong> — {{product.price}}€ — {{product.comments}}</li>
       <LinkTo {{action "resetEdit" product.id}} @route="sections.edit.edit" @models={{array @model.section.id product.id}} class="ui mini yellow button"><i class="edit icon"></i></LinkTo>
-      <!--<LinkTo @route="sections.delete" @model={{section.id}} class="ui tiny inverted red button"><i class="trash icon"></i></LinkTo>-->
+      <LinkTo {{action "resetDelete" product.id}} @route="sections.edit.delete" @models={{array @model.section.id product.id}} class="ui mini inverted red button"><i class="trash icon"></i></LinkTo>
       {{outlet product.id}}
     {{/each}}
     </ul>
   </div>
 </fieldset>
-{{outlet}}

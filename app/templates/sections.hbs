@@ -4,10 +4,10 @@
 <fieldset>
     <legend>Gestion des sections</legend>
     <div class="ui container">
-      <button {{action "addSection"}} class="ui black button">Nouvelle section ...</button>
-      <button {{action "addProduct"}} class="ui black button">Nouveau produit ...</button>
+      <button {{action "addSection"}} class="ui black button"><i class="plus icon"></i> Nouvelle section ...</button>
+      <button {{action "addProduct"}} class="ui black button"><i class="plus icon"></i> Nouveau produit ...</button>
       {{outlet "addProduct/SectionOutlet"}}
-      <label for="filterSections">Sections (nb sections)</label>
+      <label for="filterSections">Sections ({{@model.length}})</label>
       <Input
               @id="filterSections"
               @type="text"

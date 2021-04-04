@@ -1,6 +1,6 @@
 {{page-title "Edit"}}
 <fieldset>
-  <legend>Modifier un produit</legend>
+  <legend>Modifier ce produit</legend>
   <div class="ui container">
     <div class="ui form">
       <div class="field">
@@ -10,6 +10,10 @@
       <div class="field">
         <label>Prix :</label>
         <Input type="number" @value={{@model.price}} placeholder="Prix du produit" required/>
+      </div>
+      <div class="field">
+        <label>Description :</label>
+        <Input type="text" @value={{@model.comments}} placeholder="Prix du produit" required/>
       </div>
       <button {{ action 'editProduct' @model }} type="submit" class="ui yellow button">Confirmer</button>
       <LinkTo @route="sections" class="ui button">Annuler</LinkTo>

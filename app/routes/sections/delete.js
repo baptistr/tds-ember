@@ -7,7 +7,6 @@ export default class SectionsDeleteRoute extends Route {
     this.render({ outlet: this.idSection });
   }
   model(params) {
-    console.log(params.section_id);
     this.idSection = params.section_id;
     return this.store.findRecord('section', params.section_id);
   }

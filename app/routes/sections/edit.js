@@ -13,6 +13,7 @@ export default class SectionsEditRoute extends Route {
       section: this.store.findRecord('section', params.section_id, {
         include: 'products',
       }),
+      sectionId: params.section_id,
     });
   }
 
@@ -20,9 +21,23 @@ export default class SectionsEditRoute extends Route {
     section.save().then(() => this.transitionTo('sections'));
   }
 
+  @action deleteSection(section) {
+    section.save().then(() => this.transitionTo('sections'));
+  }
+
+  /*@action addProduct() {
+    this.transitionTo('sections.edit.addProduct');
+  }*/
+
   @action resetEdit(idSection) {
     this.transitionTo('sections.edit').then(() => {
       this.transitionTo('sections.edit.edit', idSection);
+    });
+  }
+
+  @action resetDelete(idSection) {
+    this.transitionTo('sections.edit').then(() => {
+      this.transitionTo('sections.edit.delete', idSection);
     });
   }
 
