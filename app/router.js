@@ -22,4 +22,5 @@ Router.map(function () {
     });
   });
   this.route('test');
+  this.route('myOrders');
 });

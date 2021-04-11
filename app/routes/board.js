@@ -19,4 +19,8 @@ export default class BoardRoute extends Abstractroute {
   @action logout() {
     this.transitionTo('logout');
   }
+
+  @action section() {
+    this.transitionTo('sections');
+  }
 }
